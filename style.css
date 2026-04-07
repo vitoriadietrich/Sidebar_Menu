@@ -1,0 +1,194 @@
+/* Configuração Global */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: #e6e6e6; /* Cinza claro do fundo */
+    display: flex;
+}
+
+/* --- ESTILOS DA BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    background-color: #1c1f2e; /* Azul marinho escuro */
+    height: 100vh;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    transition: width 0.4s ease; /* Animação suave */
+    overflow-x: hidden; /* Esconde o texto ao recolher */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+/* Largura Expandida (estado padrão) */
+.sidebar {
+    width: 260px;
+}
+
+/* Largura Recolhida */
+.sidebar.collapsed {
+    width: 80px;
+}
+
+/* --- CABEÇALHO --- */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.logo-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #5c60f5; /* Roxo claro */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    flex-shrink: 0; /* Impede o círculo de achatar */
+}
+
+.logo-name {
+    font-weight: 700;
+    font-size: 22px;
+}
+
+/* --- MENU --- */
+.sidebar-menu {
+    flex-grow: 1; /* Ocupa o espaço central */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.menu-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.section-title {
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #888b9a;
+    margin-bottom: 5px;
+}
+
+.menu-divider {
+    border: 0;
+    border-top: 1px solid #333644;
+}
+
+/* Links do Menu */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    color: #d1d2dc;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.menu-item i {
+    font-size: 20px;
+    width: 25px;
+    text-align: center;
+    flex-shrink: 0;
+}
+
+.link-name {
+    font-weight: 500;
+}
+
+/* Efeito Hover e Ativo */
+.menu-item:hover,
+.menu-item.active {
+    background-color: rgba(92, 96, 245, 0.15); /* Roxo muito transparente */
+    color: #5c60f5;
+}
+
+/* Ícone de expansão (seta) em Account */
+.account-link {
+    justify-content: space-between;
+}
+
+.toggle-icon {
+    font-size: 14px;
+    transition: transform 0.4s;
+}
+
+/* --- RODAPÉ (USUÁRIO) --- */
+.sidebar-footer {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: #262a3d; /* Azul um pouco mais claro */
+    padding: 15px;
+    border-radius: 12px;
+    margin-top: auto; /* Empurra para o final */
+}
+
+.user-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.user-name {
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.user-role {
+    font-size: 13px;
+    color: #888b9a;
+}
+
+/* --- COMPORTAMENTO QUANDO RECOLHIDA (collapsed) --- */
+
+/* Esconde títulos e textos */
+.sidebar.collapsed .section-title,
+.sidebar.collapsed .link-name,
+.sidebar.collapsed .user-info,
+.sidebar.collapsed .logo-name,
+.sidebar.collapsed .toggle-icon,
+.sidebar.collapsed .menu-divider {
+    display: none;
+}
+
+/* Centraliza os ícones */
+.sidebar.collapsed .menu-item,
+.sidebar.collapsed .logo-circle {
+    justify-content: center;
+    gap: 0;
+}
+
+/* Mostra apenas a foto */
+.sidebar.collapsed .sidebar-footer {
+    padding: 10px;
+    background-color: transparent;
+}
+
+/* --- CONTEÚDO PRINCIPAL (AJUSTE) --- */
+.main-content {
+    margin-left: 80px; /* Largura da sidebar recolhida */
+    padding: 40px;
+    transition: margin-left 0.4s;
+}
+
+.sidebar:not(.collapsed) ~ .main-content {
+    margin-left: 260px; /* Largura da sidebar expandida */
+}

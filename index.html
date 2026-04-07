@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodingLab Sidebar</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="sidebar collapsed">
+        
+        <div class="sidebar-header">
+            <div class="logo-circle">
+                <i class="fa-solid fa-code"></i>
+            </div>
+            <span class="logo-name">CodingLab</span>
+        </div>
+
+        <nav class="sidebar-menu">
+            
+            <div class="menu-section">
+                <p class="section-title">Main Menu</p>
+                <a href="#" class="menu-item active">
+                    <i class="fa-solid fa-table-columns"></i>
+                    <span class="link-name">Dashboard</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-regular fa-file-lines"></i>
+                    <span class="link-name">Overview</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span class="link-name">Analytic</span>
+                </a>
+            </div>
+
+            <hr class="menu-divider">
+
+            <div class="menu-section">
+                <p class="section-title">General</p>
+                <a href="#" class="menu-item">
+                    <i class="fa-regular fa-folder"></i>
+                    <span class="link-name">Projects</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-users"></i>
+                    <span class="link-name">Groups</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                    <span class="link-name">Transfer</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-regular fa-flag"></i>
+                    <span class="link-name">All Reports</span>
+                </a>
+                <a href="#" class="menu-item">
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="link-name">Notifications</span>
+                </a>
+            </div>
+
+            <div class="menu-section">
+                <p class="section-title">Account</p>
+                <div class="menu-item account-link" id="toggleButton">
+                    <i class="fa-regular fa-user"></i>
+                    <span class="link-name">Account</span>
+                    <i class="fa-solid fa-chevron-right toggle-icon"></i>
+                </div>
+            </div>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <img src="https://i.pravatar.cc/150?u=evamurphy" alt="User Avatar" class="user-avatar">
+            <div class="user-info">
+                <p class="user-name">Eva Murphy</p>
+                <p class="user-role">Web Developer</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <h1>Conteúdo da Página</h1>
+        <p>Clique no ícone de 'Account' (perfil) na barra lateral para expandi-la.</p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
